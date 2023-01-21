@@ -275,10 +275,12 @@ footer {
 	display: block;
 	transition: transform 0.5s;
 }
+
+
 .layer{
 	width: 100%;
 	height: 0;
-	background: linear-gradient(rgba(0,0,0,0.4), #ff6600);
+	background: linear-gradient(rgba(195, 89, 8, 0.4), #ff6600);
 	position: absolute;
 	border-radius: 8px;
 	left: 0;
@@ -293,17 +295,17 @@ footer {
 	transition: height 0.5s;
 }
 .layer h5{
-	font-size: 20px;
-	font-weight: 600;
+	font-size: 24px;
+	font-weight: bold;
 	margin-bottom: 15px;
-    color: black;
+    color: #FFFFFF;
 }
 .layer p{
-	color: black;
+	color: #FFFFFF;
 	font-size: 1rem;
 	line-height: 1.8;
 }
-.layer i{
+.layer .icon-container i{
 	color: var(--main-color);
 	margin-top: 20px;
 	font-size: 20px;
@@ -317,13 +319,20 @@ footer {
 }
 
 .icon-container {
+	width: 100%;
+	justify-content: space-around;
     display: flex;
-    justify-content: center;
+	margin-bottom: 3rem;
 }
 
 .icon {
-    margin-right: 10px;
-    padding-right: 16px;
+}
+
+.prj-icons {
+	width: 100%;
+	font-size: 3rem;
+	display: flex;
+	justify-content: space-evenly;
 }
 
 .row:hover img{
@@ -410,10 +419,10 @@ footer {
 	background-image: linear-gradient(rgba(0,0,0,255), var(--bg-color));
 }
 .about-img img{
-	max-width: 530px;
 	height: auto;
-	width: 100%;
+	width: auto;
 	border-radius: 8px;
+	float: right;
 }
 .about-text h2{
 	font-size: var(--h2-font);
@@ -465,7 +474,7 @@ footer {
 	font-size: 16px;
 	background: var(--text-color);
 	color: var(--main-color);
-	width: 110px;
+	width: 132px;
 	transition: all .45s ease;
 }
 
@@ -479,7 +488,8 @@ footer {
 }
 
 .banner{
-	width: 100%;
+	position: relative;
+	text-align: center;
 }
 
 .home{
@@ -494,3 +504,30 @@ footer {
 	width: 100%;
 	size-adjust: 40%;
 }
+
+.banner h1{
+	position: absolute;
+	top: 15%;
+	left: 15%;
+	font-size: 5rem;
+	font-weight: bold;
+	caret-color: transparent;
+}
+/* tests for absolute position */
+@media (max-width: 768px) {
+	.banner h1{
+		font-size: 4rem;
+	}
+}
+@media (max-width: 644px) {
+	.banner h1{
+		font-size: 3rem;
+	}
+}
+@media (max-width: 454px) {
+	.banner h1{
+		font-size: 2rem;
+	}
+}
+
+

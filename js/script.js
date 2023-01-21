@@ -29,3 +29,102 @@ function sendEmail(){
         );
         console.log('EMAIL SENT');
 }
+
+
+var TxtType = function(el, toRotate, period) {
+    this.toRotate = toRotate;
+    this.el = el;
+    this.loopNum = 0;
+    this.period = parseInt(period, 10) || 2000;
+    this.txt = '';
+    this.tick();
+    this.isDeleting = false;
+};
+
+TxtType.prototype.tick = function() {
+    var i = this.loopNum % this.toRotate.length;
+    var fullTxt = this.toRotate[i];
+
+    if (this.isDeleting) {
+    this.txt = fullTxt.substring(0, this.txt.length - 1);
+    } else {
+    this.txt = fullTxt.substring(0, this.txt.length + 1);
+    }
+
+    this.el.innerHTML = '<span class="wrap">'+this.txt+'</span>';
+
+    var that = this;
+    var delta = 200 - Math.random() * 100;
+
+    if (this.isDeleting) { delta /= 2; }
+
+    if (!this.isDeleting && this.txt === fullTxt) {
+    delta = this.period;
+    this.isDeleting = true;
+    } else if (this.isDeleting && this.txt === '') {
+    this.isDeleting = false;
+    this.loopNum++;
+    delta = 500;
+    }
+
+    setTimeout(function() {
+    that.tick();
+    }, delta);
+};
+
+window.onload = function() {
+    var elements = document.getElementsByClassName('typewrite');
+    for (var i=0; i<elements.length; i++) {
+        var toRotate = elements[i].getAttribute('data-type');
+        var period = elements[i].getAttribute('data-period');
+        if (toRotate) {
+          new TxtType(elements[i], JSON.parse(toRotate), period);
+        }
+    }
+    // INJECT CSS
+    var css = document.createElement("style");
+    css.type = "text/css";
+    css.innerHTML = ".typewrite > .wrap { border-right: 0.08em solid #fff}";
+    document.body.appendChild(css);
+};
+
+
+
+/* var language = {
+    en: {
+    },
+
+    sk: {
+        welcome: 'Vitajte',
+        welcometxt: 'na mojej portfolio stranke',
+        home: 'Domov',
+        o: 'O mne',
+        pr: 'Moje projekty',
+        c: 'Kontaktujte ma'
+    }
+}
+
+if (window.localStorage['language'] === 'sk'){
+    document.querySelector('#b-txt').textContent = language.sk.welcometxt;
+    document.querySelector('#b-span').textContent = language.sk.welcome;
+    document.querySelector('#nav-home').textContent = language.sk.home;
+    document.querySelector('#nav-about').textContent = language.sk.o;
+    document.querySelector('#nav-prj').textContent = language.sk.pr;
+    document.querySelector('#nav-cnt').textContent = language.sk.c;
+}
+
+const links = document.querySelectorAll('a');
+links.forEach(link => {
+    link.addEventListener('click', event => {
+        event.preventDefault();
+        if (link.getAttribute('href') === '#sk') {
+            localStorage.setItem('language', 'sk');
+        } else if (link.getAttribute('href') === '#en') {
+            localStorage.setItem('language', 'en');
+        }
+        location.reload();
+    });
+});
+ */
+
+
