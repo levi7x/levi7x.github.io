@@ -37,13 +37,13 @@
                   <div class="wrap"></div>
                 </p>
             </h1>
-            <img src="img/banner.jpg">
+            <img src="img/banner3.jpeg">
         </div>
     </section>
 
     <section class="about" id="about">
         <div class="about-img">
-			<img src="img/winner.png">
+			<!-- <img src="img/winner.png"> -->
 		</div>
 
 		<div class="about-text">
@@ -157,7 +157,7 @@
                 <div class="icon-container">
                     <a class="icon" href="https://github.com/levi7x/EshopWebAPI" target="_blank"><i class='bx bxl-github' ></i></a>
                     <a class="icon" href="#"><i class='bx bx-cloud' ></i></a>
-                    <a class="icon" href="#"><i class='bx bx-detail' ></i></a>
+                    <a class="icon" id="myBtn"><i class='bx bx-detail' ></i></a>
                 </div>
                 <div class="prj-icons">
                     <i class="devicon-react-original-wordmark colored"></i>
@@ -174,7 +174,7 @@
                 <p>Social web app for runners</p>
                 <div class="icon-container">
                     <a class="icon" href="https://github.com/levi7x/MVC_RunGroupWebApp" target="_blank"><i class='bx bxl-github' ></i></a>
-                    <a class="icon" href="#"><i class='bx bx-detail' ></i></a>
+                    <a class="icon" id="myBtn2"><i class='bx bx-detail' ></i></a>
                 </div>
                 <div class="prj-icons">
                     <i class="devicon-bootstrap-plain colored"></i>
@@ -188,10 +188,10 @@
             <img src="img/meetups.png">
             <div class="layer">
                 <h5>Meetups</h5>
-                <p>Create your meetups!</p>
+                <p>Website for creting meetups</p>
                 <div class="icon-container">
                     <a class="icon" href="https://github.com/levi7x/react-course" target="_blank"><i class='bx bxl-github' ></i></a>
-                    <a class="icon" href="#"><i class='bx bx-detail' ></i></a>
+                    <a class="icon" id="myBtn3"><i class='bx bx-detail' ></i></a>
                 </div>
                 <div class="prj-icons">
                     <i class="devicon-react-original-wordmark colored"></i>
@@ -205,8 +205,8 @@
                 <h5>Sit and go tracker</h5>
                 <p>Desktop application for tracking results of poker tournaments</p>
                 <div class="icon-container">
-                    <a class="icon" href="#"><i class='bx bxl-github' ></i></a>
-                    <a class="icon" href="#"><i class='bx bx-detail' ></i></a>
+                    <a class="icon" href="https://github.com/levi7x/STGtracker" target="_blank"><i class='bx bxl-github' ></i></a>
+                    <a class="icon" id="myBtn4"><i class='bx bx-detail' ></i></a>
                 </div>
                 <div class="prj-icons">
                     <i class="devicon-csharp-plain colored"></i>
@@ -222,7 +222,7 @@
                 <p>Table management project</p>
                 <div class="icon-container">
                     <a class="icon" href="https://github.com/levi7x/MagicVilla_API" target="_blank"><i class='bx bxl-github' ></i></a>
-                    <a class="icon" href="#"><i class='bx bx-detail' ></i></a>
+                    <a class="icon" id="myBtn5"><i class='bx bx-detail' ></i></a>
                 </div>
                 <div class="prj-icons">
                     <i class="devicon-bootstrap-plain colored"></i>
@@ -268,6 +268,80 @@
             <p style="font-size: 14px;"> Copyright © 2023 by Marián Šimo</p>
         </div>
     </footer>
+
+
+    <div class="modals">
+        <div id="modal-eshop" class="modal">
+            <div class="modal-content">
+              <span class="close" onclick="closeModal();">&times;</span>
+                <h2> About </h2>
+                <p>
+                This is eCommerce website for music equipment. Generaly this could be used for any type of shop because of its modularity. This project simulates everything you can expect from online shop from displaying catalog, browsing through it and ultimately making your own order.
+                </p>
+                
+                <h2> What i used</h2>
+                <p>
+                This project was created with ASP .NET CORE WEB API and SQL Database for backend. The core is the Entity Framework for connecting database with the API, and Identity framework for making work with different user roles easier. I used agile approach for building this website. The code is structured following repository design pattern. I also implemented custom logger for displaying warnings and info. For unit testing i used tool FakeItEasy. For  Here and there i used the new ChatGPT bot for help with making my code more clean.
+                </p>
+                
+                <h2> Goal </h2>
+                <p>
+                The goal of this project is to create website that solves a business problem. Mainly to improve myself in coding with ASP NET + React.js and applying different concepts i learned over time i ve been writing code without following any tutorials. Ultimate goal is to deploy finished project on Mircrosoft Azure.
+                </p>
+    
+                <h2> More details </h2>
+                <p> Check out <a class="gitlink" href="https://github.com/levi7x/EshopWebAPI" target="_blank">github</a> to find out more</p>
+            </div>
+        </div>
+
+        <div id="modal-runners" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal();">&times;</span>
+                <h2> About </h2>
+                <p> Platform for runners to find clubs, races in the area. The main features are showing different races, clubs based on the location you are in. As logged in user you can manage your profile, connect with other users, and create own clubs.</p>
+                <h2> Used technologies </h2>
+                <p>RunGroopApp is .NET CORE MVC application with SQL database. App uses Geo location API to detect the location of user and Cloudinary service for storing images. Design is made with html, css and Bootstrap.</p>
+            </div>
+        </div>
+
+        <div id="modal-meetups" class="modal">
+            <div class="modal-content" >
+                <span class="close" onclick="closeModal();">&times;</span>
+                <h2> About </h2>
+                <p>
+                    This was application was created using React and Firebase for learning purposes. Website allowes you to create meetups and adding them to your favorites. It includes main basic features react has to offer such as using components and calling an api.  Project is reacreation from this original <a  class="gitlink" href="https://www.youtube.com/watch?v=Dorf8i6lCuk" target="_blank">video</a>
+                </p>
+                <br>
+                <h2> Images from app </h2>
+                <div class="meetups-imgs">
+                    <img class="modal-imgs" src="/img/meetups.png" />
+                    <img class="modal-imgs" src="/img/form.png" />
+                    <img class="modal-imgs" src="/img/meetups.png" />
+                </div>
+
+            </div>
+        </div>
+
+        <div id="modal-poker" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal();">&times;</span>
+                <h2> About </h2>
+                <p> Application for poker players to track results of sit and go tournaments. Calculates the payed rake, roi, but mainly profit margins of a poker session. Can be applied for different stakes. The graph displays the number of games on X axis and profits in dollars on Y axis.</p>
+            </div>
+        </div>
+
+        <div id="modal-villa" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal();">&times;</span>
+                <h2> About </h2>
+                <p> This application stores information about different villas in the database. You can manage this data on website in form of tables. The main purpose of this project is to create an API (rest) with the right conventions using newest dotnet. Original project is from <a href="https://www.youtube.com/watch?v=_uZYOgzYheU" target="_blank" class="gitlink">this</a> source. Ultimately i also created a front end with React.js to acctualy see the results of our API. This small full-stack project includes all the CRUD operations needed for work with data. See the source code here on my <a class="gitlink" href="https://github.com/levi7x/MagicVilla_API" target="_blank">github</a></p>
+            </div>
+        </div>
+    </div>
+
+
+
+
 
     <script type="text/javascript" src="js/script.js"></script>
     <script src=" https://smtpjs.com/v3/smtp.js"></script>
